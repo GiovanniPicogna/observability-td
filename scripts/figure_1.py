@@ -8,8 +8,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from astropy import units as u
 from lib import get_cell_coordinates, get_field
+import scienceplots
 
-plt.rc('font', family='serif', serif='Times', size=15.)
+plt.style.use('science')
+plt.rc('font', size=16.)
 plt.rc('text', usetex=True)
 
 fig, ax = plt.subplots(1, 3, sharey=True, sharex=False, squeeze=True,
@@ -31,11 +33,11 @@ for i in range(3):
     ax[i].set_aspect('equal')
 
     xcell, ycell, zcell = (get_cell_coordinates(output[i]) * rscale).to(u.cm)
-    X = xcell[0]
-    Z = zcell[0]
+    X = xcell
+    Z = zcell
     ax[i].set_xlim(0, 80)
     ax[i].set_ylim(0, 80)
-    ax[i].set_title(titles[i])
+    ax[i].set_title(titles[i], fontsize=16.)
     data = np.loadtxt(streams[i])
 
     D = get_field(output[i], steps[i], 'rho')[0]
@@ -63,4 +65,4 @@ ax[0].set_ylabel('Z [AU]')
 plt.tight_layout(pad=0.1)
 cbar = fig.colorbar(im, ax=ax.ravel().tolist(), orientation='vertical',
                     label=LABEL)
-plt.savefig('Fig1.png', dpi=400)
+plt.savefig('Fig1.pdf', dpi=400)

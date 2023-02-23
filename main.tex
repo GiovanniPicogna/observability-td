@@ -154,11 +154,11 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         We adopted a spherical coordinate system centred onto the star.
         In this reference frame we can compute, without increasing the computational load, the column density from the central star at each cell.
         Using the column density and the disc local properties we determine the temperature in the bulk of the disc and in the disc atmosphere as explained in Sec.~\ref{sec:mocassin}.
-        The initial density structure was taken from the hydrostatic disc models from the \textsc{diad} code that provide also the gas temperature in the bulk of the disc, where a cavity was created by an exponential cut-off of the density
+        The initial density structure was taken from the \textbf{D’Alessio Irradiated Accretion Disc (\textsc{diad}) radiative transfer models \citep{DAlessio1998,DAlessio1999,DAlessio2001,DAlessio2005,DAlessio2006}} code that provide also the gas temperature in the bulk of the disc \textbf{that best fit the median spectral energy distribution (SED) in Taurus. For more details, the reader is referred to \citet{Picogna2019}.} A cavity was \textbf{then} created by an exponential cut-off of the density
         \begin{equation}
-          \rho = \rho_0 \cdot \exp{\left[\frac{2\pi(R-R_\textrm{cav})}{\Delta_\textrm{gap}}\right]}\,,
+          \rho = \rho_0 \cdot \exp{\left[\frac{2\pi(R-R_\textrm{cav})}{\Delta_\textrm{gap}}\right]}\, \textrm{for}\, R \leq R_\textrm{cav},
         \end{equation}
-        where $\rho_0$ is the initial density inside the cavity, $R$ is the cylindrical radius, $\Delta_\textrm{gap} = 0.1$ is the width of the cavity wall, and $R_\textrm{cav}$ is the cavity radius.
+        where \textbf{$\rho_0 = \rho(R_\mathrm{cav})$ is the initial density at the cavity location}, $R$ is the cylindrical radius, \textbf{$\Delta_\textrm{gap} = 1$ au} is the width of the cavity wall, and $R_\textrm{cav}$ is the cavity radius.
         We explore three different transition disc setups with cavity sizes of $10$, $20$, and $30$ au respectively.
         The main physical properties of the numerical simulations are reported in Table~\ref{tab:PlutoPars}.
            
@@ -176,7 +176,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         \caption{\label{tab:PlutoPars} Main properties of the parameter space studied.}
         \end{table}
 
-        The grid radial coordinate $R$ extends from just inside the cavity location (at 5, 10, and \SI{15}{au} for increasing gas cavities) to allow an increased resolution of the cavity edge and at the same time save the computational time needed to model the empty region inside it. The outer radial boundary is placed at \SI{1000}{au}, with an outer region from \SI{800}{au} where the hydrodynamics is not evolved, in order to explore the entire extent of the disc and avoid numerical reflections that would alter the wind diagnostics \citep{Picogna2019}. The radial grid is divided into 300 log-spaced cells, and open boundary conditions are applied at the inner and outer edges.
+        The grid radial coordinate $R$ extends from just inside the cavity location (at 5, 10, and \SI{15}{au} for increasing gas \textbf{cavity sizes}) to allow an increased resolution of the cavity edge and at the same time save the computational time needed to model the empty region inside it. The outer radial boundary is placed at \SI{1000}{au}, with an outer region from \SI{800}{au} where the hydrodynamics is not evolved, in order to explore the entire extent of the disc and avoid numerical reflections that would alter the wind diagnostics \citep{Picogna2019}. The radial grid is divided into 300 log-spaced cells, and open boundary conditions are applied at the inner and outer edges.
         In the polar direction, the grid ranges from the polar axis ($\theta = 0.005$) to the mid-plane with $160$ logarithmically spaced cells, which gives a higher resolution close to the disc mid-plane where the dust dynamics is taking place. The boundary condition is reflective both at the mid-plane and close to the polar axis. The grid is 2-dimensional, since the problem is symmetric in the azimuthal direction.
         
     \subsection{Thermal Calculations}\label{sec:mocassin}
@@ -184,7 +184,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         The gas temperature in the disc atmosphere is determined by a parameterisation based on detailed multi-frequency gas photoionisation and dust radiative transfer calculations performed with the {\sc mocassin} code \citep{MOCASSIN1,MOCASSIN2,MOCASSIN3} for typical protoplanetary disc conditions, irradiated by a realistic XEUV spectrum presented in \citet{Ercolano2008,Ercolano2009}.
         The resulting temperature is dependent on the column density to the central star $N$ and the ionisation parameter $\xi=L_x/nr^2$, where $L_x$ is the stellar X-ray luminosity, $n$ the local gas particle density, and $r$ the distance from the star, and it is tabulated for fast calculation.
         This temperature prescription is valid up to the maximum penetration depth of X-rays ($N_X = 2\cdot10^{22}$ pp/cm$^2$, \cite{Ercolano2009}).
-        For larger column densities we assume perfect dust and gas thermal coupling and adopt the dust temperatures from hydrostatic disc models obtained via the D’Alessio Irradiated Accretion Disc (\textsc{diad}) radiative transfer models \citep{DAlessio1998,DAlessio1999,DAlessio2001,DAlessio2005,DAlessio2006}, that best fit the median spectral energy distribution (SED) in Taurus. For more details, the reader is referred to \citet{Picogna2019}.
+        For larger column densities we assume perfect dust and gas thermal coupling and adopt the dust temperatures from hydrostatic disc models obtained via the \textsc{diad} radiative transfer models.
         The gas (and dust) temperature is thus tabulated and locally isothermal. We do not include effects like adiabatic cooling, viscous heating, dust-gas thermal interactions.
        
     \subsection{Dust dynamics}\label{sec:dust}
@@ -236,7 +236,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         This is due to the streamlines of the photoevaporative wind, which move radially inwards before carrying material outwards, as shown with red solid lines.
         \begin{figure*}
             \centering
-            \includegraphics[width=\textwidth]{dens.png}
+            \includegraphics[width=\textwidth]{Fig1.pdf}
             \caption{Gas density distributions for the different runs in the inner \SI{80}{au}. The black dashed line show the maximum penetration depth of X-rays ($N_X = 2\cdot 10^{22}$ pp cm$^{-2}$), while the red lines show gas streamlines in the wind every $8\%$ of the cumulative mass-loss rate.}.
             \label{fig:GasDist}
         \end{figure*}
@@ -247,7 +247,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         
         \begin{figure}
             \centering
-            \includegraphics[width=\columnwidth]{hydro_comp.png}
+            \includegraphics[width=\columnwidth]{Fig2.pdf}
             \caption{Panel a: disc scale height radial profile. Panel b: gas temperature radial profile. Panel c: mid-plane gas density radial profile. Panel d: normalized mid-plane pressure gradient. Panel e: radial profile of the continuum intensity in Band 3 (solid) and 7 (dashed dotted line). With dotted vertical lines the location of zero pressure gradient are reported. In all panels the orange, red, and brown lines represent the 10, 20, and 30 au cavity models respectively.
             \label{fig:scale-height}}
         \end{figure}
@@ -263,7 +263,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         The effect of dust drift is evident comparing the four dust sizes, where the \SI{1}{cm}-sized particles (3rd row) have $\mathrm{St} \sim 1$ and are the ones drifting faster towards the pressure maxima at the gap edge.
         \begin{figure*}
             \centering
-            \includegraphics[width=\textwidth]{dens_part}
+            \includegraphics[width=\textwidth]{Fig3}
             \caption{Gas and dust (normalized) density distributions for the four dust particles modelled and the different cavity edges. The black dashed line show the maximum penetration depth of X-rays ($N_X = 2\cdot 10^{22}$ pp cm$^{-2}$)}.
             \label{fig:GasDustDist}
         \end{figure*}
@@ -277,7 +277,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         
         \begin{figure*}
             \centering
-            \includegraphics[width=\textwidth]{comparison_raw}
+            \includegraphics[width=\textwidth]{Fig4}
             \caption{Continuum emission maps for the different transition discs cavities in Band 7 (top row) and Band 3 (bottom row).}
             \label{fig:DustContinuum}
         \end{figure*}
@@ -304,7 +304,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         
         \begin{figure*}
           \centering
-          \includegraphics[width=\textwidth]{comparison_conv}
+          \includegraphics[width=\textwidth]{Fig5}
           \caption{Dust continuum emission in Band 7 (top panel) and 3 (middle panel) convolved with a realistic ALMA beam size for the 10, 20, and 30 au transition discs. The convolution with the beam size blurs the features seen in Figure~\ref{fig:DustContinuum}. In the bottom panel a radial profile is shown for a direct comparison between the two different bands and the convolved and unconvolved intensities.}
           \label{fig:comp_beam}
         \end{figure*}
@@ -317,7 +317,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
     The most straightforward way to create a gap is via planet-disc interaction. \citet{Facchini2018} modelled the dust continuum emission at \SI{0.85}{mm} wavelengths for a $1$, $5$, and \SI{9}{M_{Jup}} planets at \SI{20}{au} from the central star, postprocessing the hydrodynamical simulations by \cite{Ovelar2016}. We compared in Figure~\ref{fig:Grad} the intensity and radial gradient of the continuum emission in Band 7 (convolved with the same beam size adopted in their work, i.e. $0.03 \arcsec$ at a distance of \SI{150}{pc}) with our photoevaporative cavity. The intensity profile show a much stronger dependance for the transition discs as a function of the cavity radius with respect to the planetary masses at a fixed radius. On the one hand, the planetary case shows a clear trend of shallower profiles for increasing masses. On the other hand the photoevaporative gap shows a more complex behavior. Looking more in depth at the gradient of the profile in the right panel, we can see that the \SI{10}{au} case shows a much sharper gradient, given by the higher density close to the gap edge. The \SI{30}{au} case is comparable with a \SI{1}{M_\J} planet at \SI{20}{au} (dot dashed orange line and solid brown line) both looking at the intensity profile and its gradient. Potentially a \SI{1}{M_\J} at 27-\SI{28}{au} would generate a very similar intensity profile at the gap edge as a photoevaporative gap at \SI{30}{au}. The steepness of photoevaporative gaps seems then to increase as a function of gap cavity as the larger gap is able to collect an increasing function of the drifting dust. On the contrary a more massive giant planet will open a deeper and wider, but shallower gap for increasing masses. Thus, the only match between the two processes is for a 1 Jupiter mass planet, for the current choice of the parameter space (i.e. X-ray luminosity, disc properties).
     \begin{figure*}
         \centering
-        \includegraphics[width=\textwidth]{gradI.png}
+        \includegraphics[width=\textwidth]{Fig6}
         \caption{Panel a: radial intensity profile in Band 7 for this work in orange and from \citet{Ovelar2016,Facchini2018} for a $1$, $5$, and $9 M_\mathrm{J}$ mass planet in brown. Panel b: gradients of the intensity curves. We adopted a $0.03 \arcsec$ resolution beam and a distance of $150$ pc for direct comparison.}
         \label{fig:Grad}
     \end{figure*}

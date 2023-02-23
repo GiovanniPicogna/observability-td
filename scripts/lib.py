@@ -21,9 +21,9 @@ def get_cell_coordinates(filename=None):
     if not filename:
         filename = get_filenames()[0]
     output = h.File(filename, 'r')
-    x_coords = output['cell_coords']['X']
-    y_coords = output['cell_coords']['Y']
-    z_coords = output['cell_coords']['Z']
+    x_coords = output['cell_coords']['X'][0]
+    y_coords = output['cell_coords']['Y'][0]
+    z_coords = output['cell_coords']['Z'][0]
     x_coords = x_coords.astype('float')
     y_coords = y_coords.astype('float')
     z_coords = z_coords.astype('float')
@@ -48,10 +48,8 @@ def get_step_str(step):
     return nsstr
 
 
-def read_particles(step):
+def read_particles(file_name):
     """Take in a number n, returns the square of n."""
-    step_number = get_step_str(step)
-    file_name = "part_data."+step_number+".dbl"
     with open(file_name, "rb") as file_data:
         fmt1 = "<"+"i"
         fmt2 = "<"+"d"
