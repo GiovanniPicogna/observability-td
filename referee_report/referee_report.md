@@ -94,17 +94,23 @@ It seems to be and it seems to cause the double-peak shape best visible in the b
   - we agree with the referee that the main feature to highlight is the minimum spectral index and we zoomed in Fig. 7 close to the cavity edge.
 
 - p 6, Sec. 4.2:   You might want to highlight that gaps caused by planets could be more leaky than previously assumed (recent Stammler paper)
-added
+
+  - We added the reference.
 
 - p 7, fig 5: Mention which line is which from the bottom row
-added
+
+  - We improved the caption of Figure 7 describing each line visible in the bottom panel.
 
 - p 8, fig 7: It seems non-sensical that the 10 au line extends to -30 au as measured from the cavity edge. That would be 20 au on the other side?
-Yes, I was including part of the other side of the disc. I corrected it by cutting the plot to show only one side.
+
+  - Yes, I was including part of the other side of the disc. I corrected it by cutting the plot to show only one side.
 
 - Discussion: I guess you are aware, but a comparison to a more massive planet with spectral indices calculated would be preferable than the Nazari paper with the 30 Me mass planet only. I think qualitatively the results would be the same but you might mention that as suggestion for future works.
-Yes, this is a very valid point. I reformulated a sentence in Sec. 4.2 to emphasize it.
+
+  - Yes, this is a very valid point. I reformulated a sentence in Sec. 4.2 to emphasize it.
 
 - Discussion/Conclusion: The obvious follow-up to your discussion is whether observed spectral indices would match rather the prediction of ~2.2 (photoevaporative cavity) or 2.0 (planet-induced cavity). I found for GM auriga values above 2.2 (Huang et al. 2020) but this might be resolution limited. Check further references.
+
+  - We agree that this a natural follow-up. We added a small paragraph to highlight the current status of multi-wavelength observations of transition disks and future perspectives.
 
 - Discussion/Conclusion:  There should be further dependencies which should be addressed such as varying alpha, including dust evolution, 3D modeling (more for the planetary case) etc. I suggest to mention that together with the consistent modeling of the planet vs photoevaporation hypothesis.
