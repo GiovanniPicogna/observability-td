@@ -60,7 +60,8 @@ It seems to be and it seems to cause the double-peak shape best visible in the b
 - p 3, l, l. 29:  Please comment and check on whether a large difference is introduced by choosing your minimum size (100 micrometer) as the smallest particle size compared to using a typically assumed monomer size (0.01 to 1 micrometer, Mathis+ 1977). My guess is that it is fine for the considered wavelength range.
 
 - p 3, l, l. 37:  Is A the surface area of the grid cell as seen from atop the disk or from the side? I assume the observer sees a face-on disk, right?
-Yes, we corrected the text specifying that the grid surface area A is the one seen from atop.
+
+  - Yes, we corrected the text specifying that the grid surface area A is the one seen from atop.
 
 - p 3, r, l. 28:  Language: either remove 'we show' or 'is plotted'
 
