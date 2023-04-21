@@ -77,6 +77,8 @@ It seems to be and it seems to cause the double-peak shape best visible in the b
 
 - p 5, fig 3: I do not insist on it if you are convinced about this being the ideal way to present you results, but I think the figure is hard to read with the two colormaps including the same colors. I suggest using a grayscale for the gas density or some other improvement you seem fit.
 
+  - We improved the Figure 3 by plotting isocountours of the gas pressure that help better understand the dust dynimical behaviour.
+
 - p 6, r, l. 39:  Briefly mention the setup of nazari, e.g. 2D, dust as fluid?/particles?. In contrast to your approach, they seem to have more/infinite supply of dust.
 
   - added a brief description of their setup.
