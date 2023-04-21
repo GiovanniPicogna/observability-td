@@ -13,16 +13,16 @@ import scienceplots
 
 plt.style.use('science')
 
-plt.rc('font', size=6.)
+plt.rc('font', size=18.)
 plt.rc('text', usetex=True)
-plt.rc('xtick', labelsize=6.)
-plt.rc('ytick', labelsize=6.)
-plt.rc('axes', labelsize=6.)
-plt.rc('axes', linewidth=0.5)
+plt.rc('xtick', labelsize=18.)
+plt.rc('ytick', labelsize=18.)
+plt.rc('axes', labelsize=18.)
+plt.rc('lines', linewidth=3.)
 
 plt.rcParams["errorbar.capsize"]
 
-fig, ax = plt.subplots(3, 3, figsize=[5., 5.])
+fig, ax = plt.subplots(3, 3, figsize=[18., 18.])
 
 path = "../data/"
 

@@ -13,16 +13,16 @@ from radmc3dPy import image
 
 plt.style.use('science')
 
-plt.rc('font', size=6.)
+plt.rc('font', size=18.)
 plt.rc('text', usetex=True)
-plt.rc('xtick', labelsize=6.)
-plt.rc('ytick', labelsize=6.)
-plt.rc('axes', labelsize=6.)
-plt.rc('axes', linewidth=0.5)
+plt.rc('xtick', labelsize=18.)
+plt.rc('ytick', labelsize=18.)
+plt.rc('axes', labelsize=18.)
+plt.rc('lines', linewidth=3.)
 
 plt.rcParams["errorbar.capsize"]
 
-fig, ax = plt.subplots(1, 2, figsize=[5., 2.])
+fig, ax = plt.subplots(1, 2, figsize=[17., 8.5])
 
 path = "../data/"
 

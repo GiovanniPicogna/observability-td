@@ -14,16 +14,16 @@ import scienceplots
 
 plt.style.use('science')
 
-plt.rc('font', size=6.)
+plt.rc('font', size=18.)
 plt.rc('text', usetex=True)
-plt.rc('xtick', labelsize=6.)
-plt.rc('ytick', labelsize=6.)
-plt.rc('axes', labelsize=6.)
-plt.rc('axes', linewidth=0.5)
+plt.rc('xtick', labelsize=18.)
+plt.rc('ytick', labelsize=18.)
+plt.rc('axes', labelsize=18.)
+plt.rc('lines', linewidth=3.)
 
 plt.rcParams["errorbar.capsize"]
 
-fig, ax = plt.subplots(2, 3, sharex=True, sharey=True, figsize=[5., 3.])
+fig, ax = plt.subplots(2, 3, sharex=True, sharey=True, figsize=[18., 12.])
 
 path = "../data/"
 
@@ -57,20 +57,10 @@ for i in range(2):
         ax[i][j].set_xlim(-75., 75.)
         ax[i][j].set_ylim(-75., 75.)
         if j == 0:
-            r1 = 9.115528166294098
-            r2 = 11.672483086586
-            circle1 = plt.Circle((0., 0.), r1, color='g', fill=False,
-                                 linewidth=0.6, linestyle='--', alpha=0.3)
-            circle2 = plt.Circle((0., 0.), r2, color='g', fill=False,
-                                 linewidth=0.6, linestyle='--', alpha=0.3)
-            ax[i][j].set_ylabel('Y [au]')
-            ax[i][j].add_patch(circle1)
-            ax[i][j].add_patch(circle2)
-        elif j == 1:
-            r1 = 18.479355573654175
-            r2 = 19.05549168586731
-            r3 = 22.217072248458862
-            r4 = 25.120029449462894
+            r1 = 8.2
+            r2 = 8.5
+            r3 = 9.04
+            r4 = 11.7
             circle1 = plt.Circle((0., 0.), r1, color='g', fill=False,
                                  linewidth=0.6, linestyle='--', alpha=0.3)
             circle2 = plt.Circle((0., 0.), r2, color='g', fill=False,
@@ -79,23 +69,53 @@ for i in range(2):
                                  linewidth=0.6, linestyle='--', alpha=0.3)
             circle4 = plt.Circle((0., 0.), r4, color='g', fill=False,
                                  linewidth=0.6, linestyle='--', alpha=0.3)
+            ax[i][j].set_ylabel('Y [au]')
             ax[i][j].add_patch(circle1)
             ax[i][j].add_patch(circle2)
             ax[i][j].add_patch(circle3)
             ax[i][j].add_patch(circle4)
-        else:
-            r1 = 27.772419452667236
-            r2 = 36.23497247695923
-            r3 = 38.32187294960023
+        elif j == 1:
+            r1 = 17.11
+            r2 = 18.48
+            r3 = 19.06
+            r4 = 22.37
+            r5 = 25.12
             circle1 = plt.Circle((0., 0.), r1, color='g', fill=False,
                                  linewidth=0.6, linestyle='--', alpha=0.3)
             circle2 = plt.Circle((0., 0.), r2, color='g', fill=False,
                                  linewidth=0.6, linestyle='--', alpha=0.3)
             circle3 = plt.Circle((0., 0.), r3, color='g', fill=False,
                                  linewidth=0.6, linestyle='--', alpha=0.3)
+            circle4 = plt.Circle((0., 0.), r4, color='g', fill=False,
+                                 linewidth=0.6, linestyle='--', alpha=0.3)
+            circle5 = plt.Circle((0., 0.), r5, color='g', fill=False,
+                                 linewidth=0.6, linestyle='--', alpha=0.3)
             ax[i][j].add_patch(circle1)
             ax[i][j].add_patch(circle2)
             ax[i][j].add_patch(circle3)
+            ax[i][j].add_patch(circle4)
+            ax[i][j].add_patch(circle5)
+        else:
+            r1 = 27.01
+            r2 = 27.77
+            r3 = 36.23
+            r4 = 38.32
+            r5 = 39.41
+            circle1 = plt.Circle((0., 0.), r1, color='g', fill=False,
+                                 linewidth=0.6, linestyle='--', alpha=0.3)
+            circle2 = plt.Circle((0., 0.), r2, color='g', fill=False,
+                                 linewidth=0.6, linestyle='--', alpha=0.3)
+            circle3 = plt.Circle((0., 0.), r3, color='g', fill=False,
+                                 linewidth=0.6, linestyle='--', alpha=0.3)
+            circle4 = plt.Circle((0., 0.), r4, color='g', fill=False,
+                                 linewidth=0.6, linestyle='--', alpha=0.3)
+            circle5 = plt.Circle((0., 0.), r5, color='g', fill=False,
+                                 linewidth=0.6, linestyle='--', alpha=0.3)
+            ax[i][j].add_patch(circle1)
+            ax[i][j].add_patch(circle2)
+            ax[i][j].add_patch(circle3)
+            ax[i][j].add_patch(circle4)
+            ax[i][j].add_patch(circle5)
 
         if i == 1:
             ax[i][j].set_xlabel('X [au]')

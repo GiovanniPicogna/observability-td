@@ -11,11 +11,14 @@ from lib import get_cell_coordinates, get_field
 import scienceplots
 
 plt.style.use('science')
-plt.rc('font', size=16.)
+plt.rc('font', size=18.)
 plt.rc('text', usetex=True)
+plt.rc('xtick', labelsize=18.)
+plt.rc('ytick', labelsize=18.)
+plt.rc('axes', labelsize=18.)
 
 fig, ax = plt.subplots(1, 3, sharey=True, sharex=False, squeeze=True,
-                       figsize=(16, 5))
+                       figsize=(18, 6))
 
 streams = ['stream10.dat', 'stream20.dat', 'stream30.dat']
 output = ['data10.dbl.h5', 'data20.dbl.h5', 'data30.dbl.h5']
@@ -65,4 +68,4 @@ ax[0].set_ylabel('Z [AU]')
 plt.tight_layout(pad=0.1)
 cbar = fig.colorbar(im, ax=ax.ravel().tolist(), orientation='vertical',
                     label=LABEL)
-plt.savefig('Fig1.pdf', dpi=400)
+plt.savefig('Fig1.png', format='png', dpi=400)

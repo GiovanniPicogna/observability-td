@@ -12,16 +12,16 @@ from radmc3dPy import image
 
 plt.style.use('science')
 
-plt.rc('font', size=6.)
+plt.rc('font', size=18.)
 plt.rc('text', usetex=True)
-plt.rc('xtick', labelsize=6.)
-plt.rc('ytick', labelsize=6.)
-plt.rc('axes', labelsize=6.)
-plt.rc('axes', linewidth=0.5)
+plt.rc('xtick', labelsize=18.)
+plt.rc('ytick', labelsize=18.)
+plt.rc('axes', labelsize=18.)
+plt.rc('lines', linewidth=3.)
 
 plt.rcParams["errorbar.capsize"]
 
-fig, ax = plt.subplots(1, 1, figsize=[3., 3.])
+fig, ax = plt.subplots(1, 1, figsize=[8.5, 8.5])
 
 path = "../data/"
 
@@ -63,8 +63,8 @@ for i in range(3):
     ax.plot(x[idx[i]:2000].value-shifts[i], spec_index[i, idx[i]:2000],
             label=labels[i], color='tab:orange', ls=styles[i])
 
-    ax.set_xlim(-35., 35.)
-    ax.set_ylim(1.5, 5.)
+    ax.set_xlim(-5., 10.)
+    ax.set_ylim(1.5, 4.)
 
 Nazari_int = np.loadtxt('Nazari_intermediate.dat')
 Nazari_fast = np.loadtxt('Nazari_fast.dat')
@@ -79,6 +79,6 @@ ax.plot((Nazari_fast[:, 0]*au*dpc*u.cm).to(u.AU).value-17.-36.,
 ax.vlines(0., 1.5, 5., color='black', linestyles='dashed')
 ax.set_xlabel("R [au]")
 ax.set_ylabel(r"$\alpha_{73}$")
-plt.legend(ncol=2, loc="upper center")
+plt.legend(ncol=2, loc="upper right")
 
 plt.savefig(fname='Fig7.png', format='png', dpi=400)

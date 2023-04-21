@@ -189,7 +189,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
        
     \subsection{Dust dynamics}\label{sec:dust}
     
-        The simulation was initialized only with the gas component for a few tens of orbits (at 10 au) to allow for the disc to reach an equilibrium state before the dust was inserted.
+        The simulation was initialized only with the gas component for a few tens of orbits (at 10 au) to allow for the disc to reach a \textbf{vertically hydrostatic} equilibrium before the dust was inserted.
         We modelled the dust component of the disc with $4\cdot10^5$ Lagrangian particles equally distributed in four size bins (relevant to ALMA dust continuum observations) with a radius $s$ ranging from \SI{100}{\mu m} to \SI{10}{cm} (see Table~\ref{tab:PlutoPars}).
         The dust particles were placed with an initial scale height \citep{Youdin2007}
         \begin{equation}\label{eq:scale-height}
@@ -201,7 +201,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         \end{equation}
         $\rho_s$ is the dust internal density, $\rho_g$ the local gas density, $s$ the dust size, and $\bar{v}_{th}$ the local gas thermal velocity. In this way, the initial dust configuration is close to its equilibrium and we limit vertical oscillations.
         The Stokes number (or analogously the stopping time) is a measure of the dust-gas coupling. Dust with a small Stokes number is tightly coupled with the gas, following closely its distribution, while for increasing Stokes number the dust starts to decouple from the gas, not feeling the pressure support, drifting towards the central star and settling on the disc midplane \citep{Whipple1972,Weidenschilling1977}. The dust with Stokes number of order unity are those that evolve more rapidly with respect to the gas.
-        The four dust sizes modelled correspond to minimum Stokes numbers of $1.4\cdot10^{-3}, 1.2\cdot10^{-2}, 9.6\cdot10^{-2}, 0.98$ respectively (calculated at the disc midplane).
+        The four dust sizes modelled correspond to minimum Stokes numbers of $1.4\cdot10^{-3}, 1.2\cdot10^{-2}, 9.6\cdot10^{-2}, 0.98$ respectively (calculated at the disc midplane \textbf{for the 10 au transition disc case}).
         Any dust drifting through the radial boundaries of the simulation was reinserted at the outer boundary to keep the number of dust particles constant, while reflecting conditions were applied for the azimuthal boundaries, similarly as for the gas component.
         The particles were evolved using a leap-frog integrator.
         To prevent the dust to settle vertically and keep the initial equilibrium scale height given by equation~\ref{eq:scale-height}, we apply random turbulent kicks to the dust particles proportional to the level of turbulence $\alpha$ adopted (see Table~\ref{tab:PlutoPars}). For more details on the numerical implementation, the reader is referred to \cite{Picogna2018}. We ran the hydrodynamical simulations together with the dust evolution for $\sim15$ kyr, at which point the dust distribution had reached a stable configuration for all modelled dust sizes.
@@ -213,7 +213,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
             \sigma_{i,\mathrm{dust}}(r,\theta) = \frac{N_i(r,\theta)}{A(r)} \frac{M_{i,\mathrm{dust}}}{\sum_{r,\theta}N_i(r,\theta)}\,,
          \end{equation}
 
-         where $N_i$ is the number of dust particles per bin size in each grid cell of the simulation, $A$ is the surface area of each grid cell, and 
+         where $N_i$ is the number of dust particles per bin size in each grid cell of the simulation, $A$ is the surface area of each grid cell \textbf{(seen face-on)}, and 
          \begin{equation}
             M_{i,\mathrm{dust}} = \xi M_\mathrm{gas} \frac{a_i^{4-p}}{\sum_i a_i^{4-p}}
          \end{equation}
@@ -230,20 +230,21 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
 
     \subsection{Hydrodynamics} \label{sec:results-gas}
 
-        The gas density distribution in the inner disc after several hundred orbits is shown in Fig.~\ref{fig:GasDist} for the three simulated discs. After few thousand orbits at \SI{10}{au} the disc sets into a quasi-steady state in which the cavity inner edge has moved inwards from the initial location until an equilibrium between the viscous gas inflow and the photoevaporative gas removal is reached.
+        The gas density distribution in the inner disc after several hundred orbits is shown in Fig.~\ref{fig:GasDist} for the three simulated discs. After few \textbf{hundred} orbits at \SI{10}{au} the disc sets into a quasi-steady state in which the cavity inner edge has moved inwards from the initial location until an equilibrium between the viscous gas inflow and the photoevaporative gas removal is reached. \textbf{This condition is different from the few tens of orbits needed to reach a vertically hydrostatic equilibrium, before dust insertion, as here the timescale is set by the concurrent viscous spreading and gas removal by the disc wind which take place over a longer timescale, depending on the alpha disc viscosity and the stellar mass and X-ray luminosity}.
+
         The dashed lines mark the disc region which is directly affected by X-ray heating, while gas deeper in the disc is shielded from the star's radiation and in thermal equilibrium with the dust.
         The gas density is increased also close to the mid-plane in the cavity region. 
         This is due to the streamlines of the photoevaporative wind, which move radially inwards before carrying material outwards, as shown with red solid lines.
         \begin{figure*}
             \centering
-            \includegraphics[width=\textwidth]{Fig1.pdf}
+            \includegraphics[width=\textwidth]{Fig1}
             \caption{Gas density distributions for the different runs in the inner \SI{80}{au}. The black dashed line show the maximum penetration depth of X-rays ($N_X = 2\cdot 10^{22}$ pp cm$^{-2}$), while the red lines show gas streamlines in the wind every $8\%$ of the cumulative mass-loss rate.}.
             \label{fig:GasDist}
         \end{figure*}
         At large radii the disc aspect ratio, flaring and gas density in the wind region are unaffected by the cavity size.
-        Close to the cavity, as the unshielded X-ray irradiation heats up the disc surface layers, the temperature rises sharply and the disc scale height steeply increases as shown in Figure~\ref{fig:scale-height}a,b. Furthermore, plotting the pressure gradient at the disc mid-plane one can see that a double peak develops close to the inner gap edge (Figure~\ref{fig:scale-height}d).
+        Close to the cavity, as the unshielded X-ray irradiation heats up the \textbf{bulk of the disc}, the \textbf{mid-plane} temperature rises sharply and the disc scale height steeply increases as shown in Figure~\ref{fig:scale-height}a,b. Furthermore, plotting the pressure gradient at the disc mid-plane one can see that a double peak develops close to the inner gap edge (Figure~\ref{fig:scale-height}d).
         The innermost peak is created by the temperature increase, as the gas starts to be heated by the direct X-ray irradiation. The outermost one is related to the local maximum in the midplane gas density (see Figure~\ref{fig:scale-height}c).
-        These effects have a strong impact on the gas and dust dynamics as shown in Section~\ref{sec:results-dust}, since the dust will collect at the locations where the pressure reaches a maximum, or the gradient is zero. In Figure~\ref{fig:scale-height}e, we show the intensity of the dust continuum emission at 0.85 and 3 mm is plotted for direct comparison.
+        These effects have a strong impact on the gas and dust dynamics as shown in Section~\ref{sec:results-dust}, since the dust will collect at the locations where the pressure reaches a maximum, or the gradient is zero. In Figure~\ref{fig:scale-height}e, we show the intensity of the dust continuum emission at 0.85 and 3 mm for direct comparison.
         
         \begin{figure}
             \centering
@@ -258,17 +259,19 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         In the radial direction the particles were initially spread over a range of \SI{30}{au} starting from the gas cavity. This means that the initial distribution reached out to \SI{40}{au} for the \SI{10}{au} cavity, \SI{50}{au} for the \SI{20}{au} cavity, and \SI{60}{au} for the \SI{30}{au} cavity.
 
         The smallest particles (St$\ll 1$) are very well coupled to the gas and thus follow its distribution closely, spreading to higher heights and very close to the inner cavity radius (see first row of Figure~\ref{fig:GasDustDist}).
-        Particles of intermediate sizes ($\mathrm{St} \sim 1$) do not follow the gas distribution closely, though they interact strongly with the gas and migrate quickly towards the gas pressure maxima just outside the gap. 
+        Particles of intermediate sizes ($\mathrm{St} \sim 1$) do not follow the gas distribution closely, though they interact strongly with the gas and migrate quickly towards the \textbf{(second)} gas pressure maxima \textbf{(correspondent to the gas density maxima)} just outside the gap.
         They also settle more efficiently following equation~\ref{eq:scale-height}.
         The effect of dust drift is evident comparing the four dust sizes, where the \SI{1}{cm}-sized particles (3rd row) have $\mathrm{St} \sim 1$ and are the ones drifting faster towards the pressure maxima at the gap edge.
         \begin{figure*}
             \centering
             \includegraphics[width=\textwidth]{Fig3}
-            \caption{Gas and dust (normalized) density distributions for the four dust particles modelled and the different cavity edges. The black dashed line show the maximum penetration depth of X-rays ($N_X = 2\cdot 10^{22}$ pp cm$^{-2}$)}.
+            \caption{Dust (normalized) density distributions for the four dust particles modelled and the different cavity edges. The red dashed line show the maximum penetration depth of X-rays ($N_X = 2\cdot 10^{22}$ pp cm$^{-2}$)\textbf{, while the dashed black lines show the isocontours of gas pressure in log scale}.}
             \label{fig:GasDustDist}
         \end{figure*}
         
         Furthermore, the particle scale height is strongly increased close to the inner cavity, since the gas temperature is higher due to the X-ray direct irradiation and the gas scale height is puffed up, as shown in Figure~\ref{fig:scale-height}a. This might allow a fraction of the smaller dust particles to be launched with the wind, however this effect is not visible in Figure~\ref{fig:GasDustDist}, since this fraction is too small to be captured by our limited number of modelled particles, and it involves mostly smaller (tightly coupled) dust particles. As explored recently in \citet{Franz2022}, the dust entrainment in transition discs can lead to potentially observable features that can be signatures of a thermal (or magnetic, see e.g. \citet{Rodenkirch2022}) wind.
+
+        \textbf{Interestingly, the particles with dust size equal to \SI{0.1}{cm} (second row) show a clear under-density at the disc mid-plane close to the cavity edge. This effect is cause by the vertical distribution of the pressure gradient, which is stronger at the disc midplane and gets weaker for increasing heights. The increased dust scale height close to the cavity edge allows particles of the same size to experience a large range of Stokes numbers. When they eventually settle towards the disc midplane their Stokes number increases and they drift directly towards the pressure maxima which deplets the region just inside it close to the disc midplane.}
         
         The particle distribution at the end of the simulation suffers from the lack of constant dust flux from the outer edge due to our choice of a constant particle number (bottom rows of Figure~\ref{fig:GasDustDist}). As a result, for Stokes numbers close to unity, dust is mostly concentrated close to the disc cavity. In order to soften this effect we chose an intermediate time to post-process our results for these dust sizes since the time-scale to reach an equilibrium configuration is much faster for them.
   
@@ -284,7 +287,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         
         The intensity of the dust emission has a maximum just beyond the gap edge, where the dust particles have accumulated. This maximum takes the form of a bright ring, clearly visible in the \SI{3}{mm} continuum emission (see also Figure~\ref{fig:scale-height}e), as it collects more flux for particles with Stokes number close to unity.
         
-        Beyond the bright ring the intensity gradually declines, as the dust at larger radii is increasingly shielded from stellar radiation. For the 20 and \SI{30}{au} cases a second peak is visible in the outer disc, which corresponds to the flux of pebbles that is migrating from the outer edge and is not replenished by a constant flux.
+        Beyond the bright ring the intensity gradually declines, as the dust at larger radii is increasingly shielded from stellar radiation. For the $20$ and \SI{30}{au} cases a second peak is visible in the outer disc, which corresponds to the flux of pebbles that is migrating from the outer edge and is not replenished by a constant flux.
         To allow for a more quantitative comparison of the emitted intensity we plot in Fig.~\ref{fig:comp_beam} (bottom row) a slice of the intensity map for the three discs at the two different wavelengths.
         The slices for the different wavelengths, which in principle trace different grain species, are of very similar shape and their maxima are located at the same radial distance, which doesn't allow us to have a quantitative observable of the effect of photoevaporation on different particle sizes (at least for the parameter space studied).
          
@@ -296,16 +299,16 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         The radial intensity curves for these mock observations are also shown in Fig.~\ref{fig:comp_beam} (bottom panel) and are smoothed out compared to the theoretical data but have their maximum at the same location, just outside the inner gap edge.
         
         %While the rings can still be seen in the convolved images they are invisible in those generated with casa, likely due to the very large pixel size selected, which leads to a coarse resolution.\\
-        Even though there are differences in the distributions of different particle sizes, the location of the intensity maximum is the same for 0.85 mm and 3 mm even in the theoretical images. 
+        Even though there are differences in the distributions of different particle sizes, the location of the intensity maximum is the same for \SI{0.85}{mm} and \SI{3}{mm} even in the theoretical images. 
         %The maximum of the 1. 6 $\mu$m emission is clearly offset, but unlikely to be detectable in any real observations given the fact that the emission from the star dominates the synthetic observations at this wavelength.\\
         Despite the simplified way in which we simulated ALMA observations, 
         %a more detailed approach, using the \textsc{casa} software \citep{CASA}, and considering noise would yield a more realistic set of images.
-        it is likely that the main rings in the 0.85 mm and 3 mm emission are bright and broad enough to be observable.
+        it is likely that the main rings in the \SI{0.85}{mm} and \SI{3}{mm} emission are bright and broad enough to be observable.
         
         \begin{figure*}
           \centering
           \includegraphics[width=\textwidth]{Fig5}
-          \caption{Dust continuum emission in Band 7 (top panel) and 3 (middle panel) convolved with a realistic ALMA beam size for the 10, 20, and 30 au transition discs. The convolution with the beam size blurs the features seen in Figure~\ref{fig:DustContinuum}. In the bottom panel a radial profile is shown for a direct comparison between the two different bands and the convolved and unconvolved intensities.}
+          \caption{Dust continuum emission in Band 7 (top panel) and 3 (middle panel) convolved with a realistic ALMA beam size for the 10, 20, and 30 au transition discs. The convolution with the beam size blurs the features seen in Figure~\ref{fig:DustContinuum}. In the bottom panel the radial profiles are shown for a direct comparison between \textbf{Band 7 (in orange) and Band 3 (in brown)} and the convolved \textbf{(solid lines)} and unconvolved \textbf{(dashed lines)} intensities.}
           \label{fig:comp_beam}
         \end{figure*}
 
@@ -332,20 +335,31 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
     \begin{figure}
         \centering
         \includegraphics[width=\columnwidth]{Fig7}
-        \caption{Spectral indices calculated from the synthetic images in Band 3 and 7, for the three different transition disc models, compared with the intermediate and fast migration case from \citet{Nazari_2019} and shifted to be centred at the cavity edge.}
+        \caption{Spectral indices calculated from the synthetic images in Band 3 and 7, for the three different transition disc models, compared with the intermediate and fast migration case from \citet{Nazari_2019}, shifted to be centred at the cavity edge \textbf{and zoomed in the cavity region}.}
         \label{fig:spectral_index}
     \end{figure}
-    In Figure~\ref{fig:spectral_index} we plotted the spectral index for our three transition disc simulations, where the gap edge has been shifted to give a direct comparison, and it has been highlighted with a dashed black line.
-    The two main trends that are observed are a reduction of the spectral index in the bright ring corresponding to the gap edge of the transition disk, and a general increase of the spectral index as a function of the distance from the central star, which is compatible with the current observations \citep[e.g.][]{Long2020}.
-    We compared our results with \citet{Nazari_2019}, that modelled the observability of a \SI{30}{M_\oplus} planet with different orbital migration for the same bands. 
+    In Figure~\ref{fig:spectral_index} we plotted the spectral index for our three transition disc simulations, where the \textbf{profiles have} been shifted to give a direct comparison \textbf{and zoomed in close to the cavity edge, that} has been highlighted with a \textbf{vertical} dashed black line.
+    The two main trends that are observed are a reduction of the spectral index in the bright ring corresponding to the gap edge of the transition \textbf{disc}, and a general increase of the spectral index as a function of the distance from the central star, which is compatible with the current observations \citep[e.g.][]{Long2020}.
     The most notable difference between our models is that for smaller cavities there is a less steep increase of the spectral index, since large dust particles are not all collected close to the inner edge of the cavity but spread across a larger region.
-    Since we do not include dust growth in these simulations, this is purely a dynamical effect. The reason for this difference is the limited dust supply from the outer disc region, and the larger Stokes number for dust particles of the same size in the outer disc (because of the decreased gas surface density, see eq.~\ref{eq:Stokes_number}) which increases their drift speed towards the cavity edge. There is a stark difference with respect to the planetary case. First of all the spectral index increases much \textbf{more} steeply at the gap cavity, which is a direct consequence of the stronger gradient in the intensity profile with respect to the planetary case. Furthermore, the minimum spectral index at the ring location is larger for the photoevaporative case which implies a less strong filtering effect with respect to the \SI{30}{M_\oplus} planet. Inside the gap edge the spectral index increases sharply again due to the low density and low optical depth of the disc wind, which is more pronounced for larger gap cavities. The filtering effect will become only stronger for larger planetary masses, which will accentuate the spectral index difference at the gap edge.
+    Since we do not include dust growth in these simulations, this is purely a dynamical effect. The reason for this difference is the limited dust supply from the outer disc region, and the larger Stokes number for dust particles of the same size in the outer disc (because of the decreased gas surface density, see eq.~\ref{eq:Stokes_number}) which increases their drift speed towards the cavity edge.
+
+    We compared our results with \citet{Nazari_2019}, that modelled the observability of a \SI{30}{M_\oplus} planet with different orbital migration for the same bands.
+    \textbf{They assumed a different approach than in the current work, modelling the planet-disc interaction in 2D (assuming a vertical dust distribution a posteriori), and adopting a pressureless fluid approach to describe the dust evolution, which does not allow to follow the history of a particular dust sample but lessen the problem of a limited dust supply to the cavity edge.} 
+    There is a stark difference with respect to the planetary case. 
+    %First of all the spectral index increases much \textbf{more} steeply at the gap cavity, which is a direct consequence of the stronger gradient in the intensity profile with respect to the planetary case.
+    The minimum spectral index at the ring location is larger for the photoevaporative case which implies a less strong filtering effect with respect to the \SI{30}{M_\oplus} planet. 
+    Inside the \textbf{cavity} the spectral index increases again due to the low density and low optical depth of the disc wind.%, which is more pronounced for larger gap cavities. 
+    \textbf{The comparison with a \SI{30}{M_\oplus} planet is inconsistent with the more massive ones previously considered, though a jupiter mass planet will create a steeper cavity which will have a stronger filtering effect, enhanching the behavior observed for smaller mass planerts.}
+    \textbf{However, recent results point to more leaky giant planets \citep[see e.g.][]{Stammler2023} which might alleviate the observed difference in the spectral indeces between these two effects.}
+    \textbf{There is a growing literature of multi-wavelength high-resolution observations of planet forming discs, of which few of them cover also transition and pre-transition discs.} 
+    \textbf{In particuar, the HD169142 system \citep{Macias2019} shows two bright rings at $25$ and \SI{60}{au} with spectral index between Band $3$ and $7$ of $2.025\pm0.03$ and $2.33\pm0.03$ respectively, where the first is only compatible with a planetary origin while the second can be explained by both mechanisms. Indeed it has been recently suggested than a Jupiter mass planet might be hiding in the disk cavity \citep{Hammond2023}, which render this system an important test bed in order to constraint current modelling.} 
+    \textbf{Furthermore, the transition disk GM Aur \citep{Huang2020} shows two bright rings at 40 and \SI{84}{au} with a spectral index between }
 
 \section{Conclusions} \label{sec:conclusions}
 
 We modelled the dust dynamics in a 2D dusty hydrodynamical simulation of a transition disc carved by stellar X(EUV) irradiation from the central star, and found the equilibrium distribution of a range of dust sizes.
 From this result we calculated the dust continuum emission at $0.85$ and \SI{3}{mm} wavelengths and derived synthetic ALMA observations. We then compared the cavity profiles created by photoevaporation with those of transition discs carved by a super-Earth/giant planets, in order to find characteristic features of each physical process that can be observed in current and future observational campaigns.
-We found that the steepness of the 30 au photoevaporated dust cavity is similar to that of a \SI{1}{M_\mathrm{Jup}} planet (at a similar location), while larger planets and/or larger photoevaporated cavities can generates distinguishable features.
+We found that the steepness of the 30 au photoevaporated dust cavity is similar to that of a 1 M$_\mathrm{J}$ planet (at a similar location), while larger planets and/or larger photoevaporated cavities can generates distinguishable features.
 In order to further disentangle these two effects, the spectral index analysis shows very different profiles for the planetary and photoevaporative cases, with a higher spectral index at the photoevaporated cavity edge due to the lower filtering efficiency.
 %Furthermore, the cavity is characterized by a double peak in the emission in Band 3 and 7, which is directly related to the pressure gradient profile (Figure~\ref{fig:scale-height}b), as the temperature sharply increases due to X-ray irradiation and the density drops close to the cavity edge. However, with realistic ALMA beam sizes this double peak appears as an extended ring.
 This combination of features might be specific to transition discs opened by photoevaporation, though a larger study for different stellar X-ray luminosity and stellar mass, as well as a direct comparison to a transition disc with similar physical properties opened by a planet should be necessary to better constrain the parameter space covered by stellar photoevaporation.
@@ -360,28 +374,17 @@ This paper utilizes the D’Alessio Irradiated Accretion Disk (\textsc{diad}) co
 \section*{Data Availability}
 The data underlying this article and the scripts used to create the Figures are available at \href{https://github.com/GiovanniPicogna/observability-td}{https://github.com/GiovanniPicogna/observability-td}.
 
+
 %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
 
-% The best way to enter references is to use BibTeX:
-
 \bibliographystyle{mnras}
-\bibliography{lib} % if your bibtex file is called example.bib
-
-
-% Alternatively you could enter them by hand, like this:
-% This method is tedious and prone to error if you have lots of references
-%\begin{thebibliography}{99}
-%\bibitem[\protect\citeauthoryear{Author}{2012}]{Author2012}
-%Author A.~N., 2013, Journal of Improbable Astronomy, 1, 1
-%\bibitem[\protect\citeauthoryear{Others}{2013}]{Others2013}
-%Others S., 2012, Journal of Interesting Stuff, 17, 198
-%\end{thebibliography}
+\bibliography{lib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
 
-\appendix
+%\appendix
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

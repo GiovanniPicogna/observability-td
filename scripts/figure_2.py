@@ -21,7 +21,7 @@ plt.rc('text', usetex=True)
 plt.rc('xtick', labelsize=18.)
 plt.rc('ytick', labelsize=18.)
 plt.rc('axes', labelsize=18.)
-plt.rc('axes', linewidth=0.5)
+plt.rc('lines', linewidth=3.)
 
 plt.rcParams["errorbar.capsize"]
 
@@ -140,8 +140,8 @@ for i in range(3):
     aymax = np.zeros((5))
     aymin[0] = 0.05
     aymax[0] = 2.
-    aymin[3] = -0.5
-    aymax[3] = 1
+    aymin[3] = -1
+    aymax[3] = 1.
     aymin[2] = 1.e-18
     aymax[2] = 1.e-12
     aymin[1] = 10
@@ -149,27 +149,30 @@ for i in range(3):
     aymin[4] = -7.5
     aymax[4] = -1.5
 
-    # for l in range(5):
-    #    #ax[l].vlines(7.984342575073242,aymin[l],aymax[l],color='tab:orange',ls=':')
-    #    ax[l].vlines(8.271406292915344,aymin[l],aymax[l],color='tab:orange',ls=':')
-    #    ax[l].vlines(11.366876363754272,aymin[l],aymax[l],color='tab:orange',ls=':')
+    for l in range(5):
+        ax[l].vlines(8.2, aymin[l], aymax[l], alpha=0.333, color='tab:orange', ls=':')
+        ax[l].vlines(8.5, aymin[l], aymax[l], alpha=0.333, color='tab:orange', ls=':')
+        ax[l].vlines(9.04, aymin[l], aymax[l], alpha=0.333, color='tab:orange', ls=':')
+        ax[l].vlines(11.7, aymin[l], aymax[l], alpha=0.333, color='tab:orange', ls=':')
 
-    #    #ax[l].vlines(16.98272466659546,aymin[l],aymax[l],color='tab:red',ls=':')
-    #    ax[l].vlines(17.245429754257202,aymin[l],aymax[l],color='tab:red',ls=':')
-    #    ax[l].vlines(18.41,aymin[l],aymax[l],color='tab:red',ls=':')
-    #    ax[l].vlines(18.88,aymin[l],aymax[l],color='tab:red',ls=':')
-    #    ax[l].vlines(24.547505378723145,aymin[l],aymax[l],color='tab:red',ls=':')
+        ax[l].vlines(17.11, aymin[l], aymax[l], alpha=0.333, color='tab:red', ls=':')
+        ax[l].vlines(18.48, aymin[l], aymax[l], alpha=0.333, color='tab:red', ls=':')
+        ax[l].vlines(19.06, aymin[l], aymax[l], alpha=0.333, color='tab:red', ls=':')
+        ax[l].vlines(22.37, aymin[l], aymax[l], alpha=0.333, color='tab:red', ls=':')
+        ax[l].vlines(25.12, aymin[l], aymax[l], alpha=0.333, color='tab:red', ls=':')
 
-    #    ax[l].vlines(26.75,aymin[l],aymax[l],color='tab:brown',ls=':')
-    #    ax[l].vlines(27.35,aymin[l],aymax[l],color='tab:brown',ls=':')
-    #    ax[l].vlines(35.98134994506836,aymin[l],aymax[l],color='tab:brown',ls=':')
+        ax[l].vlines(27.01, aymin[l], aymax[l], alpha=0.333, color='tab:brown', ls=':')
+        ax[l].vlines(27.77, aymin[l], aymax[l], alpha=0.333, color='tab:brown', ls=':')
+        ax[l].vlines(36.23, aymin[l], aymax[l], alpha=0.333, color='tab:brown', ls=':')
+        ax[l].vlines(38.32, aymin[l], aymax[l], alpha=0.333, color='tab:brown', ls=':')
+        ax[l].vlines(39.41, aymin[l], aymax[l], alpha=0.333, color='tab:brown', ls=':')
 
     for j in range(5):
         ax[j].set_xlim((6, 60))
         ax[j].set_xscale("log")
         formatter = ScalarFormatter()
-        formatter.set_scientific(False)
-        # formatter.set_major_formatter(ScalarFormatter("%2.1f"))
+        #formatter.set_scientific(False)
+        #formatter.set_major_formatter(ScalarFormatter("%2.1f"))
         ax[j].xaxis.set_major_formatter(formatter)
         # ax[j].xaxis.set_major_formatter(ScalarFormatter("%2.1f"))
         if j == 4:
