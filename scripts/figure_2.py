@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from astropy import units as u
 from astropy import constants as const
 from lib import get_cell_coordinates, get_field
-from matplotlib.ticker import ScalarFormatter
+from matplotlib import ticker
 
 import scienceplots
 
@@ -69,31 +69,32 @@ for i in range(3):
     ax[0].plot(X[-1, :-1]*u.cm.to(u.AU), H, '-', color=linecolors[i],
                label=labels[i])
 
-    ax[0].set_ylabel('H/R')
+    ax[0].set_ylabel('H/R', labelpad=15)
     ax[0].set_ylim(0.05, 2.)
     ax[0].set_yscale("log")
+    ax[0].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:1.1f}"))
     # ax[0].get_xaxis().set_ticklabels([])
     ax[0].text(0.05, 0.95, '(a)', transform=ax[0].transAxes, va='top')
 
     # ---------------------------
 
     Tgas = ((P*MU*const.m_p)/(const.k_B*D)).to(u.K).value
-    ax[1].plot(X[-1, :-1]*u.cm.to(u.AU), Tgas[-1, :-1], '-',
+    ax[1].plot(X[-1, :-1]*u.cm.to(u.AU), np.log10(Tgas[-1, :-1]), '-',
                color=linecolors[i], label=labels[i])
-    ax[1].set_ylabel(r'T$_\mathrm{gas}$ [K]')
-    ax[1].set_ylim(10, 2.e4)
-    ax[1].set_yscale("log")
+    ax[1].set_ylabel(r'$\log_{10}(T_\mathrm{gas}$ [K])', labelpad=26)
+    ax[1].set_ylim(1.2, 4)
+    # ax[1].set_yscale("log")
     # ax[1].get_xaxis().set_ticklabels([])
     ax[1].text(0.05, 0.95, '(b)', transform=ax[1].transAxes,
                va='top')
 
     # ----------------------------
 
-    ax[2].plot(X[-1, :-1]*u.cm.to(u.AU), D[-1, :-1], '-',
+    ax[2].plot(X[-1, :-1]*u.cm.to(u.AU), np.log10(D[-1, :-1].value), '-',
                color=linecolors[i], label=labels[i])
-    ax[2].set_ylabel(r'$\rho_\mathrm{gas}$ [g cm$^{-3}$]')
-    ax[2].set_ylim(1.e-18, 1.e-12)
-    ax[2].set_yscale("log")
+    ax[2].set_ylabel(r'$\log_{10}(\rho_\mathrm{gas}$ [g cm$^{-3}$])')
+    ax[2].set_ylim(-18, -12)
+    #ax[2].set_yscale("log")
     # ax[2].get_xaxis().set_ticklabels([])
     ax[2].text(0.05, 0.95, '(c)', transform=ax[2].transAxes,
                va='top')
@@ -101,13 +102,14 @@ for i in range(3):
     # ----------------------------
 
     dPdR = np.asarray(np.diff(P))/np.asarray(np.diff(X))
-    for j in range(np.size(X[-1, :-2])):
-        if (dPdR[-1, j]*dPdR[-1, j+1] < 0):
-            print(i, 0.5*(X[-1, j]*u.cm.to(u.AU)+X[-1, j+1]*u.cm.to(u.AU)))
+#    for j in range(np.size(X[-1, :-2])):
+#        if (dPdR[-1, j]*dPdR[-1, j+1] < 0):
+#            print(i, 0.5*(X[-1, j]*u.cm.to(u.AU)+X[-1, j+1]*u.cm.to(u.AU)))
     ax[3].plot(X[-1, :-1]*u.cm.to(u.AU),
                dPdR[-1, :]/np.max(dPdR[-1, :]),
                '-', color=linecolors[i], label=labels[i])
-    ax[3].set_ylabel('dP/dR [norm.]')
+    ax[3].set_ylabel('$dP/dR$ [norm.]', labelpad=0)
+    ax[3].set_ylim(-0.9, 1.)
     ax[3].text(0.05, 0.95, '(d)', transform=ax[3].transAxes,
                va='top')
 
@@ -131,7 +133,7 @@ for i in range(3):
                    color=linecolors[i], ls=linestyle[j])
 
     ax[4].set_ylim(-7.5, -1.5)
-    ax[4].set_ylabel(r'$log(I)$ [Jy px$^{-1}$]')
+    ax[4].set_ylabel(r'$log_{10}(I)$ [Jy px$^{-1}$]', labelpad=11)
     ax[4].text(0.05, 0.95, '(e)', transform=ax[4].transAxes, va='top')
 
     # -----------------------------
@@ -142,10 +144,10 @@ for i in range(3):
     aymax[0] = 2.
     aymin[3] = -1
     aymax[3] = 1.
-    aymin[2] = 1.e-18
-    aymax[2] = 1.e-12
-    aymin[1] = 10
-    aymax[1] = 30000
+    aymin[2] = -18
+    aymax[2] = -12
+    aymin[1] = 1.2
+    aymax[1] = 4
     aymin[4] = -7.5
     aymax[4] = -1.5
 
@@ -170,14 +172,15 @@ for i in range(3):
     for j in range(5):
         ax[j].set_xlim((6, 60))
         ax[j].set_xscale("log")
-        formatter = ScalarFormatter()
-        #formatter.set_scientific(False)
-        #formatter.set_major_formatter(ScalarFormatter("%2.1f"))
-        ax[j].xaxis.set_major_formatter(formatter)
-        # ax[j].xaxis.set_major_formatter(ScalarFormatter("%2.1f"))
         if j == 4:
+            ax[j].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:1.0f}"))
+            ax[j].xaxis.set_minor_formatter(ticker.StrMethodFormatter("{x:1.0f}"))
             ax[j].set_xlabel('R [au]')
+        else:
+            #ax[j].set_xticklabels([], minor=True)
+            ax[j].set_xticklabels([])
+            ax[j].set_xticklabels([], minor=True)
 
-plt.tight_layout()
+fig.tight_layout(pad=0.1)
 
-plt.savefig('Fig2.pdf', dpi=400)
+fig.savefig('Fig2.png', format="png", dpi=400)

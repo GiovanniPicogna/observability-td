@@ -62,7 +62,8 @@ for size in range(4):
             ax[size][i].set_xlim(17, 35)
         else:
             ax[size][i].set_xlim(27, 50)
-        ax[size][i].set_title(str(sizes[i])+' au')
+        if size == 0:
+            ax[size][i].set_title(str(sizes[i])+' au', pad=20)
         data = np.loadtxt('stream'+str(sizes[i])+'.dat')
 
         D = (get_field('data' + str(sizes[i]) + '.dbl.h5', steps_hydro[i],
@@ -113,25 +114,27 @@ for size in range(4):
                                            linestyles='dashed', colors='red')
 
         if size == 3:
-            ax[size][i].set_xlabel('r [AU]')
+            ax[size][i].set_xlabel('r [AU]', labelpad=10)
+        else:
+            ax[size][i].set_xticklabels([])
         if i == 0:
-            ax[size][i].set_ylabel(r'colatitude [rad]')
+            ax[size][i].set_ylabel(r'colatitude [rad]', labelpad=10)
         if i == 2:
             ax[size][i].yaxis.set_label_position("right")
             if size == 0:
-                ax[size][i].set_ylabel('0.01 cm')
+                ax[size][i].set_ylabel('0.01 cm', labelpad=30)
             elif size == 1:
-                ax[size][i].set_ylabel('0.1 cm')
+                ax[size][i].set_ylabel('0.1 cm', labelpad=30)
             elif size == 2:
-                ax[size][i].set_ylabel('1 cm')
+                ax[size][i].set_ylabel('1 cm', labelpad=30)
             else:
-                ax[size][i].set_ylabel('10 cm')
+                ax[size][i].set_ylabel('10 cm', labelpad=30)
 
 labelplot = '$\\log_{10}$(P [barye])'
 labelplot2 = '$\\Sigma_d$ [norm.]'
 
-plt.tight_layout()
+fig.tight_layout(pad=0.3)
 
 cbar2 = fig.colorbar(dim, ax=ax.ravel().tolist(), orientation='vertical',
-                     label=labelplot2, location='left', aspect=30)
-plt.savefig('Fig3.png', dpi=400)
+                     label=labelplot2, location='left', aspect=30, pad=0.06)
+fig.savefig('Fig3.png', dpi=400)

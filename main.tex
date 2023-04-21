@@ -1,52 +1,13 @@
-% mnras_template.tex 
-%
-% LaTeX template for creating an MNRAS paper
-%
-% v3.0 released 14 May 2015
-% (version numbers match those of mnras.cls)
-%
-% Copyright (C) Royal Astronomical Society 2015
-% Authors:
-% Keith T. Smith (Royal Astronomical Society)
-
-% Change log
-%
-% v3.0 May 2015
-%    Renamed to match the new package name
-%    Version number matches mnras.cls
-%    A few minor tweaks to wording
-% v1.0 September 2013
-%    Beta testing only - never publicly released
-%    First version: a simple (ish) template for creating an MNRAS paper
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Basic setup. Most papers should leave these options alone.
 \documentclass[fleqn,usenatbib]{mnras}
 
-% MNRAS is set in Times font. If you don't have this installed (most LaTeX
-% installations will be fine) or prefer the old Computer Modern fonts, comment
-% out the following line
-\usepackage{newtxtext,newtxmath}
 \usepackage{layouts}
-
-% Depending on your LaTeX fonts installation, you might get better results with one of these:
-%\usepackage{mathptmx}
-%\usepackage{txfonts}
-
-% Use vector fonts, so it zooms properly in on-screen viewing software
-% Don't change these lines unless you know what you are doing
+\usepackage{mathptmx}
 \usepackage[T1]{fontenc}
 
-% Allow "Thomas van Noord" and "Simon de Laguarde" and alike to be sorted by "N" and "L" etc. in the bibliography.
-% Write the name in the bibliography as "\VAN{Noord}{Van}{van} Noord, Thomas"
 \DeclareRobustCommand{\VAN}[3]{#2}
 \let\VANthebibliography\thebibliography
 \def\thebibliography{\DeclareRobustCommand{\VAN}[3]{##3}\VANthebibliography}
 
-
-%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
-
-% Only include extra packages if you really need them. Common packages are:
 \usepackage{graphicx}	% Including figure files
 \graphicspath{{figures/}}
 \usepackage{amsmath}	% Advanced maths commands
@@ -62,16 +23,7 @@ range-units = brackets}
 \usepackage{hyperref} 
 \usepackage{afterpage}
 \usepackage{silence}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
-
-% Please keep new commands to a minimum, and use \newcommand not \def to avoid
-% overwriting existing commands. Example:
-%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-square
-\newcommand{\new}[1]{{\bf \color{black} #1}}
-\newcommand{\todo}[1]{{\bf \color{red} #1}}
+\usepackage{newtxtext,newtxmath}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -248,7 +200,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         
         \begin{figure}
             \centering
-            \includegraphics[width=\columnwidth]{Fig2.pdf}
+            \includegraphics[width=\columnwidth]{Fig2}
             \caption{Panel a: disc scale height radial profile. Panel b: gas temperature radial profile. Panel c: mid-plane gas density radial profile. Panel d: normalized mid-plane pressure gradient. Panel e: radial profile of the continuum intensity in Band 3 (solid) and 7 (dashed dotted line). With dotted vertical lines the location of zero pressure gradient are reported. In all panels the orange, red, and brown lines represent the 10, 20, and 30 au cavity models respectively.
             \label{fig:scale-height}}
         \end{figure}

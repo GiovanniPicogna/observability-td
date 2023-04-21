@@ -67,7 +67,7 @@ for i in range(1):
         ax[0].set_xlim(3, 70)
         # ax[0].set_ylim(-1.5,0.6)
         ax[0].set_xlabel("R [au]")
-        ax[0].set_ylabel(r'I (mJy beam$^{-1}$)')
+        ax[0].set_ylabel(r'I (mJy beam$^{-1}$)', labelpad=15)
 
         if j == 2:
             Ovelar_1Mj = np.loadtxt('Ovelar_1Mj.dat')
@@ -82,19 +82,19 @@ for i in range(1):
                        linestyle='-.', color="saddlebrown")
 
         grad_data = np.gradient(data_conv[1024, 1024:], x[1024:])
-        ax[1].plot(x[1024:], grad_data, label=labels[j],
+        ax[1].plot(x[1024:], grad_data*1e4, label=labels[j],
                    linestyle=linestyles[j], color="sandybrown")
 
         if j == 2:
-            ax[1].plot(Ovelar_1Mj[:, 0], np.gradient(Ovelar_1Mj[:, 1],
+            ax[1].plot(Ovelar_1Mj[:, 0], 1e4*np.gradient(Ovelar_1Mj[:, 1],
                                                      Ovelar_1Mj[:, 0]),
                        label='1 M$_J$ @ 20 au', linestyle='-',
                        color="saddlebrown")
-            ax[1].plot(Ovelar_5Mj[:, 0], np.gradient(Ovelar_5Mj[:, 1],
+            ax[1].plot(Ovelar_5Mj[:, 0], 1e4*np.gradient(Ovelar_5Mj[:, 1],
                                                      Ovelar_5Mj[:, 0]),
                        label='5 M$_J$ @ 20 au', linestyle='--',
                        color="saddlebrown")
-            ax[1].plot(Ovelar_9Mj[:, 0], np.gradient(Ovelar_9Mj[:, 1],
+            ax[1].plot(Ovelar_9Mj[:, 0], 1e4*np.gradient(Ovelar_9Mj[:, 1],
                                                      Ovelar_9Mj[:, 0]),
                        label='9 M$_J$ @ 20 au', linestyle='-.',
                        color="saddlebrown")
@@ -103,7 +103,7 @@ for i in range(1):
         # ax.set_ylim(0,-0.0005)
         ax[1].set_xlabel("R [au]")
         ax[1].yaxis.set_label_position("right")
-        ax[1].set_ylabel(r'$dI/dR$')
+        ax[1].set_ylabel(r'$dI/dR \ [\cdot 10^{-4}$]')
         ax[1].yaxis.tick_right()
         ax[1].legend(ncol=2)
 fig.tight_layout()
