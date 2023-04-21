@@ -73,6 +73,8 @@ It seems to be and it seems to cause the double-peak shape best visible in the b
 
 - p 3. r, sect. 3.2.: Can you explain why the dust distributuion for 0.1 cm does not extend all the way to the midplane close to the cavity?
 
+  - This effect is cause by the vertical distribution of the pressure gradient, which is stronger at the disc mid-plane and gets weaker for increasing heights. The increased dust scale height close to the cavity edge allows particles of the same size to experience a large range of Stokes numbers. When they eventually settle towards the disc midplane their Stokes number increases and they drift directly towards the pressure maxima which deplets the region just inside it close to the disc midplane. We plotted in Figure 3 the isocontours of the gas pressure and added a paragraph in Sec. 3.2 to explain this effect.
+
 - p 5, fig 3: Mention the time of the simulation since the injection of the dust (relevant to interpret drift)
 
 - p 5, fig 3: I do not insist on it if you are convinced about this being the ideal way to present you results, but I think the figure is hard to read with the two colormaps including the same colors. I suggest using a grayscale for the gas density or some other improvement you seem fit.
@@ -85,9 +87,11 @@ It seems to be and it seems to cause the double-peak shape best visible in the b
 
 - p 6, r, l. 50:  language: "... increases much <more?> steeply ..."
 
-  - corrected
+  - removed, following next comment.
 
 - p 6, r, l. 50ff: To me, neither seems to be much steeper. I would only hightlight the minimum spectral index. The comparison further out is biased by boundary conditions. Within the gap you can probably not measure it due to lack of emission, no? If you agree you might consider zooming into the region from -5 to 10 au around the cavity
+
+  - we agree with the referee that the main feature to highlight is the minimum spectral index and we zoomed in Fig. 7 close to the cavity edge.
 
 - p 6, Sec. 4.2:   You might want to highlight that gaps caused by planets could be more leaky than previously assumed (recent Stammler paper)
 added
