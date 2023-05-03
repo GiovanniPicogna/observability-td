@@ -29,7 +29,7 @@ Please also comment on how a full radiation-hydrodynamic coupling instead of a a
 Could then the inner pressure peak be affected since it is caused by the dT/dr change at the midplane? Is the inner peak relevant for the dust dynamics?
 It seems to be and it seems to cause the double-peak shape best visible in the bottom left panel of Fig. 5 (unconvolved).
 
-  - The temperature reported in Fig. 2b is the mid-plane temperature, since it is the most relevant for the settled dust grains. A fully coupled radiation-hydrodynamic model would not change drastically the temperature profile if the system has reached a radiative equilibrium configuration. The temperature prescription adopted in this work has been proven to be consistent with Monte Carlo temperature models (Owen et al. 2010, Picogna et al. 2019). It is true that the temperatures are tabulated, but they are so as a function of the local disk and stellar irradiation properties. The transition between the X-ray heated and the screened region is a physically thin layer which is challenging to spatially solve numerically but it has been previously tested that an increased resolution does not change the global properties of the disk and the wind. The inner pressure peak, having a short radiative equilibrium timescale, would not be affected by a fully coupled radiation hydrodynamic model, and it would not change significantly for an increased resolution. As shown in Figure 3 only the smallest grain size modelled (s = 0.01 cm) can reach the X-ray heated region and potentially be entrained in the disk wind. A fully coupled radiation hydrodynamics model would be better able to address the entrainment of dust of this and smaller sizes that can on short timescales be entrained in the wind flow. However this size has a limited impact on the simulated dust emission continuum in ALMA Band 3 and 7. I overplot the locations where dP/dR=0 on top of Fig. 4 to show the impact of pressure peaks on the dust continuum emission.  
+  - The temperature reported in Fig. 2b is the mid-plane temperature, since it is the most relevant for the settled dust grains. A fully coupled radiation-hydrodynamic model would not change drastically the temperature profile if the system has reached radiative equilibrium. The temperature prescription adopted in this work has been proven to be consistent with Monte Carlo models (Owen et al. 2010, Picogna et al. 2019). It is true that the temperatures are tabulated, but they are so as a function of the local disk and stellar irradiation properties. The transition between the X-ray heated and the screened region is a physically thin layer which is challenging to spatially solve numerically but it has been previously tested that an increased resolution does not change the global properties of the disk and the wind. The inner pressure peak, having a short radiative equilibrium timescale, would not be affected by a fully coupled radiation hydrodynamic model, and it would not change significantly for an increased resolution. As shown in Figure 3 only the smallest grain size modelled (s = 0.01 cm) can reach the X-ray heated region and potentially be entrained in the disk wind. A fully coupled radiation hydrodynamics model would be better able to address the entrainment of dust of this and smaller sizes that can on short timescales be entrained in the wind flow. However this size has a limited impact on the simulated dust emission continuum in ALMA Band 3 and 7. I overplot the locations where dP/dR=0 on top of Fig. 4 to show the impact of pressure peaks on the dust continuum emission.  
 
 - p 3, r, l. 49ff: The interpretation of the increased dust scale height does not seem to match the temperature plotted in Fig. 2. The temperature (e.g for Rcav=10 au) drops at 8 au but the dust scale height is increased up to 12.5 au. My guess for the apparent mismatch is that this is because Fig. 2 shows midplane temperature. Check this and somehow describe or visualize the relevant temperature (e.g. as a 2D plot)
 
@@ -60,7 +60,8 @@ It seems to be and it seems to cause the double-peak shape best visible in the b
 - p 3, l, l. 29:  Please comment and check on whether a large difference is introduced by choosing your minimum size (100 micrometer) as the smallest particle size compared to using a typically assumed monomer size (0.01 to 1 micrometer, Mathis+ 1977). My guess is that it is fine for the considered wavelength range.
 
 - p 3, l, l. 37:  Is A the surface area of the grid cell as seen from atop the disk or from the side? I assume the observer sees a face-on disk, right?
-Yes, we corrected the text specifying that the grid surface area A is the one seen from atop.
+
+  - Yes, we corrected the text specifying that the grid surface area A is the one seen from atop.
 
 - p 3, r, l. 28:  Language: either remove 'we show' or 'is plotted'
 
@@ -87,16 +88,20 @@ Yes, we corrected the text specifying that the grid surface area A is the one se
 - p 6, r, l. 50ff: To me, neither seems to be much steeper. I would only hightlight the minimum spectral index. The comparison further out is biased by boundary conditions. Within the gap you can probably not measure it due to lack of emission, no? If you agree you might consider zooming into the region from -5 to 10 au around the cavity
 
 - p 6, Sec. 4.2:   You might want to highlight that gaps caused by planets could be more leaky than previously assumed (recent Stammler paper)
-added
+
+  - added
 
 - p 7, fig 5: Mention which line is which from the bottom row
-added
+
+  - added
 
 - p 8, fig 7: It seems non-sensical that the 10 au line extends to -30 au as measured from the cavity edge. That would be 20 au on the other side?
-Yes, I was including part of the other side of the disc. I corrected it by cutting the plot to show only one side.
+
+  - Yes, I was including part of the other side of the disc. I corrected it by cutting the plot to show only one side.
 
 - Discussion: I guess you are aware, but a comparison to a more massive planet with spectral indices calculated would be preferable than the Nazari paper with the 30 Me mass planet only. I think qualitatively the results would be the same but you might mention that as suggestion for future works.
-Yes, this is a very valid point. I reformulated a sentence in Sec. 4.2 to emphasize it.
+
+  - Yes, this is a very valid point. I reformulated a sentence in Sec. 4.2 to emphasize it.
 
 - Discussion/Conclusion: The obvious follow-up to your discussion is whether observed spectral indices would match rather the prediction of ~2.2 (photoevaporative cavity) or 2.0 (planet-induced cavity). I found for GM auriga values above 2.2 (Huang et al. 2020) but this might be resolution limited. Check further references.
 
