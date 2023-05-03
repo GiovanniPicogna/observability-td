@@ -21,7 +21,7 @@ To be more specific, make clear at some point if and why your modeling gives an 
 Very naively, one could imagine that the outcome would be the same as in your model since your simulations are locally isothermal and rely on tabulated temperatures anyway.
 In case there is no clear advantage, make sure to mention that you confirm that it could be done with a more simple approach - although it is likely reasonable to test it.
 
-  - The 2 bands studied in this work are ALMA Band 3 (3 mm) and Band 7 (0.85 mm). The contribution to these 2 wavelengths are given predominantly by dust particles with similar dust sizes, although contribution from smaller and bigger dust sizes can play a non-negligible role. Especially for Band 7, the 1D approach can fail in predicting the correct dust emission since, as shown in Figure 3 (second row, which represents the 1 mm dust particles) of the manuscript, the dust is stirred up in the whole domain and in particular close to the gap edge. The 1D approach could on the other hand allow a better handling of dust growth/fragmentation and indeed it has been tested in the literature (see e.g. Garate et al. 2021).
+  - The 2 bands studied in this work are ALMA Band 3 (3 mm) and Band 7 (0.85 mm). The contribution to these 2 wavelengths are given predominantly by dust particles with similar dust sizes, although contribution from smaller and bigger dust sizes can play a non-negligible role. Especially for Band 7, the 1D approach can fail in predicting the correct dust emission since, as shown in Figure 3 (second row, which represents the 1 mm dust particles) of the manuscript, the dust is stirred up in the whole domain and in particular close to the gap edge. The 1D approach could on the other hand allow a better handling of dust growth/fragmentation and indeed it has been tested in the literature (see e.g. Garate et al. 2021). We added a comment in a new Section 4.3.
 
 - p 3, r, l. 18ff: I assume the temperature (and thus the scale height) transitions from the X-ray regime to the hydrostatic regime at the sharp drops close to the cavity edge (at column densities of NX=2e22).
 How do you measure temperature, is that the one at the midplane or some vertical average?
@@ -59,6 +59,8 @@ It seems to be and it seems to cause the double-peak shape best visible in the b
 
 - p 3, l, l. 29:  Please comment and check on whether a large difference is introduced by choosing your minimum size (100 micrometer) as the smallest particle size compared to using a typically assumed monomer size (0.01 to 1 micrometer, Mathis+ 1977). My guess is that it is fine for the considered wavelength range.
 
+  - From a dynamical point of view, particles smaller than 100 micrometers for our choice of the parameter space, are completely coupled to the gas. Decreasing the minimum size has been found to have no impact also on our synthetic maps in Band 3 and 7. We clarify this in the first paragraph of Section 2.3
+
 - p 3, l, l. 37:  Is A the surface area of the grid cell as seen from atop the disk or from the side? I assume the observer sees a face-on disk, right?
 
   - Yes, we corrected the text specifying that the grid surface area A is the one seen from atop.
@@ -76,6 +78,8 @@ It seems to be and it seems to cause the double-peak shape best visible in the b
   - This effect is cause by the vertical distribution of the pressure gradient, which is stronger at the disc mid-plane and gets weaker for increasing heights. The increased dust scale height close to the cavity edge allows particles of the same size to experience a large range of Stokes numbers. When they eventually settle towards the disc midplane their Stokes number increases and they drift directly towards the pressure maxima which deplets the region just inside it close to the disc midplane. We plotted in Figure 3 the isocontours of the gas pressure and added a paragraph in Sec. 3.2 to explain this effect.
 
 - p 5, fig 3: Mention the time of the simulation since the injection of the dust (relevant to interpret drift)
+
+  - Included in the caption of Fig. 3
 
 - p 5, fig 3: I do not insist on it if you are convinced about this being the ideal way to present you results, but I think the figure is hard to read with the two colormaps including the same colors. I suggest using a grayscale for the gas density or some other improvement you seem fit.
 
@@ -107,10 +111,12 @@ It seems to be and it seems to cause the double-peak shape best visible in the b
 
 - Discussion: I guess you are aware, but a comparison to a more massive planet with spectral indices calculated would be preferable than the Nazari paper with the 30 Me mass planet only. I think qualitatively the results would be the same but you might mention that as suggestion for future works.
 
-  - Yes, this is a very valid point. I reformulated a sentence in Sec. 4.2 to emphasize it.
+  - Yes, this is a very valid point. I reformulated a sentence in a new Sec. 4.3 adressing model limitations to emphasize it.
 
 - Discussion/Conclusion: The obvious follow-up to your discussion is whether observed spectral indices would match rather the prediction of ~2.2 (photoevaporative cavity) or 2.0 (planet-induced cavity). I found for GM auriga values above 2.2 (Huang et al. 2020) but this might be resolution limited. Check further references.
 
-  - We agree that this a natural follow-up. We added a small paragraph to highlight the current status of multi-wavelength observations of transition disks and future perspectives.
+  - We agree that this a natural follow-up. We added a small paragraph to highlight the current status of multi-wavelength observations of transition disks and future perspectives at the end of Sec. 4.2.
 
 - Discussion/Conclusion:  There should be further dependencies which should be addressed such as varying alpha, including dust evolution, 3D modeling (more for the planetary case) etc. I suggest to mention that together with the consistent modeling of the planet vs photoevaporation hypothesis.
+
+  - We added a small paragraph in the model limitation section (Sec 4.2)

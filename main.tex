@@ -143,6 +143,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
     
         The simulation was initialized only with the gas component for a few tens of orbits (at 10 au) to allow for the disc to reach a \textbf{vertically hydrostatic} equilibrium before the dust was inserted.
         We modelled the dust component of the disc with $4\cdot10^5$ Lagrangian particles equally distributed in four size bins (relevant to ALMA dust continuum observations) with a radius $s$ ranging from \SI{100}{\mu m} to \SI{10}{cm} (see Table~\ref{tab:PlutoPars}).
+        \textbf{From a dynamical point of view, particles smaller than $100 \, \mu$m are almost completely coupled to the gas. Decreasing the minimum size has been found to have a very limited impact also on our synthetic maps for the wavelength considered, so we restricted our analysis to this range.}
         The dust particles were placed with an initial scale height \citep{Youdin2007}
         \begin{equation}\label{eq:scale-height}
             \frac{H_p}{H} = \sqrt{\frac{\alpha}{\alpha + St}}\,,
@@ -217,7 +218,7 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
         \begin{figure*}
             \centering
             \includegraphics[width=\textwidth]{Fig3}
-            \caption{Dust (normalized) density distributions for the four dust particles modelled and the different cavity edges. The red dashed line show the maximum penetration depth of X-rays ($N_X = 2\cdot 10^{22}$ pp cm$^{-2}$)\textbf{, while the dashed black lines show the isocontours of gas pressure in log scale}.}
+            \caption{Dust (normalized) density distributions for the four dust particles modelled and the different cavity edges. The red dashed line show the maximum penetration depth of X-rays ($N_X = 2\cdot 10^{22}$ pp cm$^{-2}$)\textbf{, while the dashed black lines show the isocontours of gas pressure in log scale. The snapshot is taken after 1,500 yr of dust insertion.}}
             \label{fig:GasDustDist}
         \end{figure*}
         
@@ -300,12 +301,19 @@ Finally, in Section~\ref{sec:conclusions} we present the main conclusions.
     There is a stark difference with respect to the planetary case. 
     %First of all the spectral index increases much \textbf{more} steeply at the gap cavity, which is a direct consequence of the stronger gradient in the intensity profile with respect to the planetary case.
     The minimum spectral index at the ring location is larger for the photoevaporative case which implies a less strong filtering effect with respect to the \SI{30}{M_\oplus} planet. 
-    Inside the \textbf{cavity} the spectral index increases again due to the low density and low optical depth of the disc wind.%, which is more pronounced for larger gap cavities. 
-    \textbf{The comparison with a \SI{30}{M_\oplus} planet is inconsistent with the more massive ones previously considered, though a jupiter mass planet will create a steeper cavity which will have a stronger filtering effect, enhanching the behavior observed for smaller mass planerts.}
-    \textbf{However, recent results point to more leaky giant planets \citep[see e.g.][]{Stammler2023} which might alleviate the observed difference in the spectral indeces between these two effects.}
+    Inside the \textbf{cavity} the spectral index increases again due to the low density and low optical depth of the disc wind.%, which is more pronounced for larger gap cavities.
+
     \textbf{There is a growing literature of multi-wavelength high-resolution observations of planet forming discs, of which few of them cover also transition and pre-transition discs.} 
-    \textbf{In particuar, the HD169142 system \citep{Macias2019} shows two bright rings at $25$ and \SI{60}{au} with spectral index between Band $3$ and $7$ of $2.025\pm0.03$ and $2.33\pm0.03$ respectively, where the first is only compatible with a planetary origin while the second can be explained by both mechanisms. Indeed it has been recently suggested than a Jupiter mass planet might be hiding in the disk cavity \citep{Hammond2023}, which render this system an important test bed in order to constraint current modelling.} 
-    \textbf{Furthermore, the transition disk GM Aur \citep{Huang2020} shows two bright rings at 40 and \SI{84}{au} with a spectral index between }
+    \textbf{In particuar, the HD169142 system \citep{Macias2019} shows two bright rings at $25$ and \SI{60}{au} with spectral index between Band $3$ and $7$ of $2.025\pm0.03$ and $2.33\pm0.03$ respectively, where the first is only compatible with a planetary origin while the second is closer to the predictions of disk photoevaporation. Indeed it has been recently suggested than a Jupiter mass planet might be hiding in the disc cavity \citep{Hammond2023}, which render this system an important test bed in order to constraint current modelling.} 
+    \textbf{Furthermore, the transition disc GM Aur \citep{Huang2020} shows two bright rings at 40 and \SI{84}{au} with a spectral index between 1.1 and 2.1 mm of 2.1 and 2.35, respectively. Here again the first value is compatible with the planetary scenario, while the second one is on the high end, but a targeted analysis of these systems should be made to draw meaningful conclusions, which goes beyond the scope of the current work.}
+
+    \subsection{Model limitations}
+
+    \textbf{The spectral index comparison with a \SI{30}{M_\oplus} planet is inconsistent with the more massive ones previously considered for the dust continuum emission, though a jupiter mass planet will create a steeper cavity which will have a stronger filtering effect, enhanching the behavior observed for smaller mass planerts.}
+    \textbf{However, recent results point to more leaky giant planets \citep[see e.g.][]{Stammler2023} which might alleviate the observed difference in the spectral indeces between these two effects.}
+    \textbf{Nevertheless, a self-consistent modelling of planet and photoevaporation within the same framework would help better to disentangle the two effects, and it is indeed our plan for the future. Further differences given by the non axysimmetric structures introduced by the planet, and the temporal variability on an orbital timescale can be used to further distinguish a planetary induced transition disc.}
+
+    \textbf{In this study we considered only a very specific set of parameters. In the future we plan to relax these conditions by varying the disc (alpha, disc mass) and stellar properties (stellar mass and X-ray luminosities). Furthermore, to expand further the parameter space, a good avenue would be to restrict to a 1D disc evolution with prescribed mass-loss rates that would allow us to include dust growth/fragmentation, similarly as in \citet{Garate2021}.}
 
 \section{Conclusions} \label{sec:conclusions}
 
